@@ -1,0 +1,11 @@
+.subscribedGrid {
+  overflow: scroll;
+  padding: 8px;
+}
+
+.subscribedGrid__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 8px;
+}

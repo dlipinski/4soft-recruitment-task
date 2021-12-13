@@ -1,0 +1,14 @@
+.appDetails {
+  border-left: 1px solid #222;
+  padding: 16px;
+}
+
+.appDetails__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.appDetails__header__name {
+  font-weight: 700;
+  font-size: 24px;
+}

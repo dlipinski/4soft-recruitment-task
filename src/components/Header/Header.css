@@ -1,0 +1,10 @@
+.appBar {
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid #222;
+}
+
+.appBar__logo {
+  text-transform: uppercase;
+  font-weight: 900;
+}

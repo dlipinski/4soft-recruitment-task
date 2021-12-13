@@ -1,0 +1,26 @@
+.appsList {
+  border-right: 1px solid #222;
+  overflow: scroll;
+  padding: 8px;
+}
+
+.appsList__header {
+  border-bottom: 1px solid #222;
+  display: grid;
+  gap: 4px;
+  padding: 8px;
+}
+
+.appsList__header__title {
+  font-weight: 700;
+}
+
+.appsList__header__subtitle {
+  font-weight: 500;
+  font-size: 12px;
+  color: #777;
+}
+
+.appsList__items {
+  padding-top: 8px;
+}
