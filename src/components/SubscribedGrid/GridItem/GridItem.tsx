@@ -1,8 +1,8 @@
 import { useCallback } from "react";
-import { Application, useApps } from "../../../context/appsContext";
+import { App, useAppsManager } from "../../../context/appsManagerContext";
 import "./GridItem.css";
 
-interface GridItemProps extends Application {
+interface GridItemProps extends App {
   activeUsers: number;
   logo: string;
 }
@@ -14,11 +14,11 @@ export const GridItem = ({
   activeUsers,
   logo,
 }: GridItemProps) => {
-  const { selectId } = useApps();
+  const { selectApp } = useAppsManager();
 
   const onGridItemClicked = useCallback(() => {
-    selectId(id);
-  }, [id, selectId]);
+    selectApp(id);
+  }, [id, selectApp]);
 
   return (
     <div className="gridItem" onClick={onGridItemClicked}>

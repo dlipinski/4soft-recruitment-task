@@ -1,17 +1,25 @@
-import { useCallback } from "react";
-import { Application, useApps } from "../../../context/appsContext";
+import { useCallback, useMemo } from "react";
+import { App, useAppsManager } from "../../../context/appsManagerContext";
 import "./ListItem.css";
-interface ListItemProps extends Application {}
 
-export const ListItem = ({ id, name, company }: ListItemProps) => {
-  const { subscribeApp } = useApps();
+interface ListItemProps extends App {
+  isSelected?: boolean;
+}
+
+export const ListItem = ({ id, name, company, isSelected }: ListItemProps) => {
+  const { toggleAppSubscription } = useAppsManager();
 
   const onListItemClicked = useCallback(() => {
-    subscribeApp(id);
-  }, [id, subscribeApp]);
+    toggleAppSubscription(id);
+  }, [id, toggleAppSubscription]);
+
+  const className = useMemo(
+    () => (isSelected ? "listItem listItem--selected" : "listItem"),
+    [isSelected]
+  );
 
   return (
-    <div className="listItem" onClick={onListItemClicked}>
+    <div className={className} onClick={onListItemClicked}>
       <span className="listItem__name">{name}</span>
       <span className="listItem__company">{company}</span>
     </div>

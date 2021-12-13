@@ -7,12 +7,16 @@
   align-items: center;
 }
 
-.listItem:hover {
+.listItem:not(.listItem--selected):hover {
   background: #eee;
 }
 
 .listItem:hover:active {
   background: #ddd;
+}
+
+.listItem--selected {
+  background: #ccc;
 }
 
 .listItem__name {

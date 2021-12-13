@@ -1,14 +1,14 @@
-import { useApps } from "../../context/appsContext";
+import { useAppsManager } from "../../context/appsManagerContext";
 import { GridItem } from "./GridItem/GridItem";
 import "./SubscribedGrid.css";
 
 export const SubscribedGrid = () => {
-  const { subscribedDetails } = useApps();
+  const { appsDetails } = useAppsManager();
 
   return (
     <div className="subscribedGrid">
       <div className="subscribedGrid__items">
-        {subscribedDetails.map((app) => (
+        {Object.values(appsDetails).map((app) => (
           <GridItem
             key={app.id}
             id={app.id}
